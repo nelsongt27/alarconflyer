@@ -18,16 +18,16 @@
             line-height: 1.4;
             color: #1a1a1a;
             background: white;
-            padding: 20px;
-            max-width: 100%;
-            min-height: auto;
+            padding: 30px;
+            max-width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
             border-bottom: 3px solid #4c51bf;
         }
 
@@ -47,8 +47,8 @@
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 30px;
+            margin-bottom: 25px;
         }
 
         .left-column, .right-column {
@@ -185,9 +185,9 @@
 
         .operator-section {
             background: #edf2f7;
-            padding: 15px;
+            padding: 20px;
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .operator-section h3 {
@@ -282,88 +282,12 @@
             border-top: 1px solid #e2e8f0;
         }
 
-        /* Price and Image Section */
-        .price-image-section {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 20px;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-
-        .property-image-small {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            height: 250px;
-        }
-
-        .property-image-small img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
-
-        .price-section-compact {
-            background: linear-gradient(135deg, #4c51bf, #667eea);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            border-radius: 12px;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .price-section-compact .price-main {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .price-section-compact .price-subtitle {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-
-        .price-section-compact .roi-highlight {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 12px;
-            border-radius: 8px;
-        }
-
-        .price-section-compact .roi-stats {
-            display: flex;
-            justify-content: space-around;
-            gap: 8px;
-        }
-
-        .price-section-compact .roi-stat {
-            text-align: center;
-        }
-
-        .price-section-compact .roi-number {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffd700;
-        }
-
-        .price-section-compact .roi-label {
-            font-size: 10px;
-            opacity: 0.9;
-        }
-
         .key-benefits {
             background: #fff5cd;
             border: 2px solid #ffd700;
             border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
         }
 
         .key-benefits h3 {
@@ -403,9 +327,8 @@
 
         @media print {
             body {
-                padding: 10mm;
+                padding: 15mm;
                 margin: 0;
-                max-width: 190mm;
             }
             
             .contact-section {
@@ -413,21 +336,9 @@
                 print-color-adjust: exact;
             }
             
-            .price-section-compact {
+            .price-section {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-            }
-            
-            .property-image-small {
-                height: 200px;
-            }
-            
-            .price-section-compact {
-                height: 200px;
-            }
-            
-            .price-image-section {
-                grid-template-columns: 1fr 1.8fr;
             }
         }
     </style>
@@ -439,36 +350,31 @@
         <div class="subtitle">Vendo Acción del Fideicomiso Alarcón - Pool de Propiedades Rentadas</div>
     </div>
 
-    <!-- Price and Image Section -->
-    <div class="price-image-section">
-        <div class="property-image-small">
-            <img src="./images/alarcon1.png" alt="Alarcón PerSe - Vista de la Propiedad" onerror="this.style.display='none'">
-        </div>
-        <div class="price-section-compact">
-            <div class="price-main">$740,000 MXN</div>
-            <div class="price-subtitle">Por debajo del valor proyectado 2026 ($884,000 MXN)</div>
-            <div class="roi-highlight">
-                <div class="roi-stats">
-                    <div class="roi-stat">
-                        <div class="roi-number">5-6%</div>
-                        <div class="roi-label">Rentas Netas</div>
-                    </div>
-                    <div class="roi-stat">
-                        <div class="roi-number">+</div>
-                        <div class="roi-label"></div>
-                    </div>
-                    <div class="roi-stat">
-                        <div class="roi-number">7-9%</div>
-                        <div class="roi-label">Plusvalía Anual</div>
-                    </div>
-                    <div class="roi-stat">
-                        <div class="roi-number">=</div>
-                        <div class="roi-label"></div>
-                    </div>
-                    <div class="roi-stat">
-                        <div class="roi-number">12-15%</div>
-                        <div class="roi-label">Rendimiento Total</div>
-                    </div>
+    <!-- Price Section -->
+    <div class="price-section">
+        <div class="price-main">$740,000 MXN</div>
+        <div class="price-subtitle">Por debajo del valor proyectado 2026 ($884,000 MXN)</div>
+        <div class="roi-highlight">
+            <div class="roi-stats">
+                <div class="roi-stat">
+                    <div class="roi-number">5-6%</div>
+                    <div class="roi-label">Rentas Netas</div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">+</div>
+                    <div class="roi-label"></div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">7-9%</div>
+                    <div class="roi-label">Plusvalía Anual</div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">=</div>
+                    <div class="roi-label"></div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">12-15%</div>
+                    <div class="roi-label">Rendimiento Total</div>
                 </div>
             </div>
         </div>
@@ -590,11 +496,6 @@
     <div class="contact-section">
         <h3>Más Información</h3>
         <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-icon">🌐</div>
-                <div class="contact-text">Sitio Web</div>
-                <div class="website-url">alarconpoolrentas.netlify.app</div>
-            </div>
             <div class="contact-item">
                 <div class="contact-icon">📱</div>
                 <div class="contact-text">WhatsApp</div>
