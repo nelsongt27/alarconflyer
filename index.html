@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fideicomiso Alarcón - Oportunidad de Inversión</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: white;
+            padding: 30px;
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4c51bf;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            color: #4c51bf;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #4c51bf;
+        }
+
+        .section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-icon {
+            font-size: 20px;
+        }
+
+        .section p, .section li {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section li {
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .section li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, #4c51bf, #667eea);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .price-main {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .price-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .roi-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .roi-stats {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .roi-stat {
+            text-align: center;
+        }
+
+        .roi-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .roi-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .performance-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .table-header {
+            background: #4c51bf;
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .table-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+            background: #f7fafc;
+            font-weight: 600;
+            color: #4c51bf;
+        }
+
+        .operator-section {
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .operator-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .operator-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .operator-stat {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .operator-stat strong {
+            color: #4c51bf;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .contact-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .website-url {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffd700;
+            word-break: break-all;
+        }
+
+        .phone-number {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffd700;
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .property-image {
+            text-align: center;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .property-image img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .key-benefits {
+            background: #fff5cd;
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .key-benefits h3 {
+            color: #744210;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 15px 10px;
+            border-radius: 8px;
+            border: 1px solid #ffd700;
+        }
+
+        .benefit-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #744210;
+            margin-bottom: 5px;
+        }
+
+        .benefit-label {
+            font-size: 12px;
+            color: #744210;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                padding: 15mm;
+                margin: 0;
+            }
+            
+            .contact-section {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .price-section {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">🏡 Oportunidad de Inversión</div>
+        <div class="subtitle">Vendo Acción del Fideicomiso Alarcón - Pool de Propiedades Rentadas</div>
+    </div>
+
+    <!-- Price Section -->
+    <div class="price-section">
+        <div class="price-main">$740,000 MXN</div>
+        <div class="price-subtitle">Por debajo del valor proyectado 2026 ($884,000 MXN)</div>
+        <div class="roi-highlight">
+            <div class="roi-stats">
+                <div class="roi-stat">
+                    <div class="roi-number">5-6%</div>
+                    <div class="roi-label">Rentas Netas</div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">+</div>
+                    <div class="roi-label"></div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">7-9%</div>
+                    <div class="roi-label">Plusvalía Anual</div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">=</div>
+                    <div class="roi-label"></div>
+                </div>
+                <div class="roi-stat">
+                    <div class="roi-number">12-15%</div>
+                    <div class="roi-label">Rendimiento Total</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Image -->
+    <div class="property-image">
+        <img src="./images/alarcon1.png" alt="Alarcón PerSe - Vista de la Propiedad" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Key Benefits -->
+    <div class="key-benefits">
+        <h3>Lo Más Importante</h3>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-number">100%</div>
+                <div class="benefit-label">Inversión Pasiva</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">85%+</div>
+                <div class="benefit-label">Ocupación Promedio</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">0</div>
+                <div class="benefit-label">Dolores de Cabeza</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="left-column">
+            <!-- What You're Buying -->
+            <div class="section">
+                <h3><span class="section-icon">🏠</span>¿Qué estás comprando?</h3>
+                <ul>
+                    <li>Acción del Fideicomiso Alarcón</li>
+                    <li>Participación en pool de propiedades</li>
+                    <li>Renta mensual promedio: $3,250 MXN</li>
+                    <li>Sin obligaciones de gestión</li>
+                </ul>
+            </div>
+
+            <!-- Performance -->
+            <div class="section">
+                <h3><span class="section-icon">📈</span>Rentabilidad Comprobada</h3>
+                <div class="performance-table">
+                    <div class="table-header">Rentas desde Junio 2022</div>
+                    <div class="table-row">
+                        <span>Jun-Dic 2022</span>
+                        <span>$14,599</span>
+                    </div>
+                    <div class="table-row">
+                        <span>Año 2023</span>
+                        <span>$30,070</span>
+                    </div>
+                    <div class="table-row">
+                        <span>Año 2024</span>
+                        <span>$39,683</span>
+                    </div>
+                    <div class="table-row">
+                        <span>Proyección 2025</span>
+                        <span>$39,000</span>
+                    </div>
+                    <div class="table-row">
+                        <span><strong>Total Estimado</strong></span>
+                        <span><strong>$123,352</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <!-- Benefits -->
+            <div class="section">
+                <h3><span class="section-icon">✅</span>¿Por qué invertir?</h3>
+                <ul>
+                    <li>Flujo pasivo mensual directo</li>
+                    <li>Respaldado por bienes raíces</li>
+                    <li>Alta ocupación (más del 85%)</li>
+                    <li>Inversión líquida y transferible</li>
+                    <li>Balance perfecto seguridad/rendimiento</li>
+                </ul>
+            </div>
+
+            <!-- Location -->
+            <div class="section">
+                <h3><span class="section-icon">📍</span>Ubicación Privilegiada</h3>
+                <p><strong>Mexicaltzingo y Juan Ruíz de Alarcón</strong></p>
+                <ul>
+                    <li>Junto a estación Mi Bici</li>
+                    <li>300m del Corredor Chapultepec</li>
+                    <li>Zona comercial y gastronómica</li>
+                    <li>Excelente conectividad</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Operator Section -->
+    <div class="operator-section">
+        <h3>Respaldado por Perse Capital</h3>
+        <div class="operator-stats">
+            <div class="operator-stat">
+                <strong>$131.2MM</strong>
+                Recaudados en 48 campañas
+            </div>
+            <div class="operator-stat">
+                <strong>100%</strong>
+                Pagos a tiempo/adelantados
+            </div>
+            <div class="operator-stat">
+                <strong>45+ años</strong>
+                Experiencia inmobiliaria
+            </div>
+            <div class="operator-stat">
+                <strong>4 proyectos</strong>
+                Entregados con plusvalía
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h3>Más Información</h3>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <div class="contact-text">Sitio Web</div>
+                <div class="website-url">alarconpoolrentas.netlify.app</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div class="contact-text">WhatsApp</div>
+                <div class="phone-number">+52 332 494 4005</div>
+            </div>
+        </div>
+        <p style="font-size: 14px; margin-top: 10px; opacity: 0.9;">
+            Solicita reportes financieros, contrato del fideicomiso y documentación completa
+        </p>
+    </div>
+
+</body>
+</html>
